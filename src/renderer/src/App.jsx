@@ -1,27 +1,19 @@
-import React from "react"
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import Nav from "./components/Nav.jsx"
-import Home from "./pages/Home.jsx"
-import About from "./pages/about.jsx"
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home/>
-  },
-  {
-    path: "/about",
-    element: <About/>
-  }
-])
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route, RouterProvider } from 'react-router-dom'
+import Nav from './components/Nav.jsx'
+import Home from './pages/Home/Home.jsx'
+import About from './pages/About/About.jsx'
 
 function App() {
-
   return (
     <>
-    {/* <Topbar/> */}
-    <Nav/>
-      <RouterProvider router={router}/>
+      <Router>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Router>
     </>
   )
 }

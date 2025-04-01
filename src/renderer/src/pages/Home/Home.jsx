@@ -3,6 +3,8 @@ import React from 'react'
 
 export default function Home() {
   return (
-    <Button>Button</Button>
+    <div className="">
+      <h1 className='text-4xl text-center'>Accueil</h1>
+    </div>
   )
 }
