@@ -1,3 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'base.css';
+
+html,
+body {
+  @apply bg-gray-50;
+}
+
+.link {
+    @apply text-black cursor-pointer hover:font-bold duration-200;
+}

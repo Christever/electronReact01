@@ -4,29 +4,33 @@ import { Link } from 'react-router-dom'
 
 export default function Nav() {
   return (
-    <Navbar className="flex gap-3 items-center">
+    <Navbar fullWidth={true} className="flex gap-3 items-center mb-5 shadow-gray-500 shadow-lg">
       <Menu>
         <MenuHandler>
-          <span className='text-black cursor-pointer'>Clients</span>
+          <Link to={'/'} className="link">
+            Accueil
+          </Link>
+        </MenuHandler>
+      </Menu>
+      <Menu>
+        <MenuHandler>
+          <span className="link">Clients</span>
         </MenuHandler>
         <MenuList>
           <MenuItem>
-            <Link to={'/'}>Nouveau client</Link>
+            <Link className='link' to={'/add-client'}>Nouveau client</Link>
           </MenuItem>
-          <MenuItem placeholder={"Test"}>
-            <Link className='text-blue-500' to={'/'}>Liste des clients</Link>
+          <MenuItem>
+            <Link className="link" to={'/listClient'}>
+              Liste des clients
+            </Link>
           </MenuItem>
         </MenuList>
       </Menu>
       <Menu>
         <MenuHandler>
-          <span className="text-black cursor-pointer">A propos</span>
+          <Link to={"/about"} className="link">A propos</Link>
         </MenuHandler>
-        <MenuList>
-          <MenuItem>
-            <Link to={'/about'}>A Propos</Link>
-          </MenuItem>
-        </MenuList>
       </Menu>
     </Navbar>
   )
